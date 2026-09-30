@@ -1,11 +1,12 @@
 /* 1. 테마: 이 값들을 바꾸면 페이지 전체에 적용됩니다. */
 :root {
   --page: #ffffff;
-  --ink: #242724;
-  --muted: #636963;
-  --accent: #2d5545;
-  --line: #d9ddd8;
-  --image-background: #f1f2ef;
+  --ink: #111111;
+  --muted: #666666;
+  --faint: #767676;
+  --accent: #111111;
+  --line: #dcdcdc;
+  --image-background: #f2f2f2;
   --content-width: 1100px;
 }
 
@@ -43,7 +44,36 @@ h1, h2, h3, h4 { line-height: 1.5; }
 }
 .skip-link:focus { transform: translateY(0); }
 
-/* 3. 첫 화면. 소개 옆에 대표 프로젝트의 이미지를 둡니다. */
+/* 2-1. 이력서. 왼쪽 프로필 / 가운데 경력·수상·도구 / 오른쪽 프로젝트 목록 */
+.resume { padding-block: 56px 72px; }
+.resume-label { color: var(--faint); font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+.resume-name { margin-top: 28px; font-size: clamp(48px, 6vw, 80px); font-weight: 800; letter-spacing: -.06em; line-height: 1.15; }
+.resume-grid { display: grid; grid-template-columns: 1fr 1.15fr 1.25fr; gap: 64px; margin-top: 72px; }
+.resume-col { display: grid; align-content: start; gap: 64px; min-width: 0; }
+.resume-heading { color: var(--ink); font-size: 14px; font-weight: 400; letter-spacing: .02em; text-transform: uppercase; }
+.resume-block { display: grid; grid-template-columns: 88px 1fr; gap: 0 20px; align-items: start; }
+.resume-block > :not(.resume-heading) { grid-column: 2; grid-row: 1; }
+.resume-profile { font-size: 14px; }
+.resume-profile > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
+.resume-profile > div + div { margin-top: 14px; }
+.resume-profile dt { color: var(--ink); }
+.resume-profile ul { list-style: none; padding: 0; margin: 0; }
+.resume-profile li::before { content: "- "; }
+.resume-rows { list-style: none; padding: 0; font-size: 14px; }
+.resume-rows li { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; }
+.resume-rows li + li { margin-top: 6px; }
+.row-period { color: var(--faint); }
+.resume-projects { list-style: none; padding: 0; margin-top: 4px; }
+.resume-projects li + li { margin-top: 32px; }
+.rp-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.rp-head a, .rp-head strong { font-size: 15px; font-weight: 700; text-decoration: none; }
+.rp-head a:hover { text-decoration: underline; }
+.rp-year { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+.resume-projects p { margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.resume .resume-block:has(.resume-projects) { display: block; }
+.resume .resume-block:has(.resume-projects) .resume-heading { margin-bottom: 20px; }
+
+/* 3. 헤더 */
 .site-header {
   display: flex;
   align-items: center;
@@ -58,39 +88,7 @@ h1, h2, h3, h4 { line-height: 1.5; }
 .site-header a { min-height: 44px; display: inline-flex; align-items: center; }
 .site-header nav a { text-decoration: none; }
 .site-header nav a:hover { text-decoration: underline; }
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  align-items: center;
-  gap: 80px;
-  padding-block: 58px 64px;
-}
-.intro-copy { max-width: 390px; }
 .eyebrow { color: var(--muted); font-size: 12px; font-weight: 400; }
-h1 { margin-top: 16px; font-size: clamp(32px, 3.5vw, 44px); letter-spacing: -.045em; line-height: 1.35; }
-.introduction { margin-top: 20px; max-width: 350px; color: var(--muted); }
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  min-height: 44px;
-  margin-top: 20px;
-  color: var(--accent);
-  text-decoration: underline;
-}
-.button:hover { text-decoration-thickness: 2px; }
-.featured-preview { display: block; text-decoration: none; }
-.preview-heading { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 10px; color: var(--muted); font-size: 12px; }
-.featured-preview img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: contain;
-  background: var(--image-background);
-}
-.preview-caption { display: grid; gap: 3px; padding-top: 13px; text-decoration: none; }
-.preview-caption strong { font-size: 19px; font-weight: 700; }
-.preview-caption > span { color: var(--muted); font-size: 13px; }
-.preview-caption:hover strong { text-decoration: underline; }
 .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; cursor: zoom-in; }
 
 /* 4. 프로젝트의 이미지, 역할, 결과. 박스 대신 간격과 구분선으로 묶습니다. */
@@ -180,17 +178,19 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
 .viewer-caption { text-align: center; color: #c1c8c1; font-size: 13px; }
 
 /* 7. 작은 화면에서는 이미지와 설명을 한 열로 배치합니다. */
+@media (max-width: 1000px) {
+  .resume-grid { grid-template-columns: 1fr; gap: 48px; margin-top: 48px; }
+  .resume-col { gap: 40px; }
+}
 @media (max-width: 760px) {
   .container { width: calc(100% - 40px); }
+  .resume { padding-block: 36px 48px; }
+  .resume-block { grid-template-columns: 1fr; gap: 12px; }
+  .resume-block > :not(.resume-heading) { grid-column: 1; grid-row: auto; }
+  .resume-profile > div { grid-template-columns: 90px 1fr; }
   .site-header { flex-wrap: wrap; gap: 0 20px; padding-block: 14px 10px; }
   .site-header nav { gap: 4px 22px; }
-  .intro { grid-template-columns: 1fr; gap: 30px; padding-block: 34px 40px; }
-  .intro-copy { max-width: 480px; }
   h1 { font-size: 34px; }
-  .introduction { margin-top: 14px; max-width: 440px; }
-  .button { margin-top: 12px; }
-  .featured-preview img { aspect-ratio: 16 / 9; }
-  .preview-caption strong { font-size: 18px; }
   .section-heading { flex-wrap: wrap; gap: 4px; padding-block: 22px 28px; }
   .project-header { grid-template-columns: 28px 1fr; gap: 12px; margin-bottom: 22px; }
   .project h3 { font-size: 24px; }

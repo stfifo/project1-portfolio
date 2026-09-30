@@ -12,10 +12,9 @@ document.addEventListener('click', (event) => {
   const source = trigger.querySelector('img');
   if (!source) return;
 
-  const project = trigger.closest('.project, .featured-preview');
-  const title = project?.querySelector('h3, .preview-caption strong');
-  const caption = trigger.closest('figure')?.querySelector('figcaption')
-    || project?.querySelector('.preview-caption > span');
+  const project = trigger.closest('.project');
+  const title = project?.querySelector('h3');
+  const caption = trigger.closest('figure')?.querySelector('figcaption');
 
   imageOpener = trigger;
   viewerImage.src = source.currentSrc || source.src;
