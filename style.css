@@ -48,30 +48,22 @@ h1, h2, h3, h4 { line-height: 1.5; }
 .resume { padding-block: 56px 72px; }
 .resume-label { color: var(--faint); font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
 .resume-name { margin-top: 28px; font-size: clamp(48px, 6vw, 80px); font-weight: 800; letter-spacing: -.06em; line-height: 1.15; }
-.resume-grid { display: grid; grid-template-columns: 1fr 1.15fr 1.25fr; gap: 64px; margin-top: 72px; }
+.resume-grid { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 32px; margin-top: 72px; }
 .resume-col { display: grid; align-content: start; gap: 64px; min-width: 0; }
-.resume-heading { color: var(--ink); font-size: 14px; font-weight: 400; letter-spacing: .02em; text-transform: uppercase; }
+.resume-col + .resume-col { padding-left: 32px; border-left: 1px solid var(--line); }
+.resume-heading { color: var(--ink); font-size: 18px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 .resume-block { display: grid; grid-template-columns: 88px 1fr; gap: 0 20px; align-items: start; }
 .resume-block > :not(.resume-heading) { grid-column: 2; grid-row: 1; }
 .resume-profile { font-size: 14px; }
 .resume-profile > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
 .resume-profile > div + div { margin-top: 14px; }
-.resume-profile dt { color: var(--ink); }
+.resume-profile dt { color: var(--ink); font-weight: 700; color: lightslategray;}
 .resume-profile ul { list-style: none; padding: 0; margin: 0; }
 .resume-profile li::before { content: "- "; }
 .resume-rows { list-style: none; padding: 0; font-size: 14px; }
 .resume-rows li { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; }
 .resume-rows li + li { margin-top: 6px; }
 .row-period { color: var(--faint); }
-.resume-projects { list-style: none; padding: 0; margin-top: 4px; }
-.resume-projects li + li { margin-top: 32px; }
-.rp-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
-.rp-head a, .rp-head strong { font-size: 15px; font-weight: 700; text-decoration: none; }
-.rp-head a:hover { text-decoration: underline; }
-.rp-year { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
-.resume-projects p { margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.6; }
-.resume .resume-block:has(.resume-projects) { display: block; }
-.resume .resume-block:has(.resume-projects) .resume-heading { margin-bottom: 20px; }
 
 /* 3. 헤더 */
 .site-header {
@@ -100,7 +92,7 @@ h1, h2, h3, h4 { line-height: 1.5; }
   padding-block: 24px 32px;
   border-top: 1px solid var(--ink);
 }
-h2 { font-size: 22px; letter-spacing: -.03em; }
+h2 { font-size: 22px; font-weight: 700; letter-spacing: -.03em; }
 .section-heading p { color: var(--muted); font-size: 12px; }
 .project { padding-bottom: 44px; border-bottom: 1px solid var(--line); }
 .project + .project { padding-top: 40px; }
@@ -126,6 +118,20 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--accent); }
 .text-link:hover { text-decoration-thickness: 2px; }
 
+/* 프로젝트 목록. 카드 전체가 링크이며 상세 페이지로 이동합니다. */
+.project-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+.project-card { display: grid; gap: 6px; width: 100%; padding: 28px 32px; border: 1px solid var(--line); text-decoration: none; border-radius: 20px;}
+.project-card:hover { border-color: var(--ink); color: inherit; }
+.card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.card-head h3 { font-size: 20px; letter-spacing: -.03em; }
+.card-year { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.card-desc { color: var(--muted); font-size: 14px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin-top: 14px; }
+.card-tags li { padding: 2px 12px; border-radius: 999px; background-color: var(--line); color: var(--muted); font-size: 12px; line-height: 1.7; font-weight: 600;}
+.project-page { padding-top: 20px; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-bottom: 12px; color: var(--muted); font-size: 13px; text-decoration: none; }
+.back-link:hover { color: var(--ink); text-decoration: underline; }
+
 /* 5. 제목을 누르면 제작 기록이 열립니다. 키보드로도 조작할 수 있습니다. */
 .case-study { margin-top: 32px; border-top: 1px solid var(--line); }
 .case-study summary { width: fit-content; max-width: 100%; min-height: 52px; padding-block: 14px 8px; cursor: pointer; font-size: 14px; }
@@ -146,7 +152,7 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
 .related { border-bottom: 0; }
 .related p { color: var(--muted); }
 .link-list { list-style: none; padding: 0; margin-top: 10px; }
-.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; color: var(--muted); font-size: 12px; }
 
 /* 이미지 확대. 닫기 버튼 또는 Esc 키로 원래 화면으로 돌아갑니다. */
 .image-viewer-open, .image-viewer-open body { overflow: hidden; }
@@ -181,6 +187,7 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
 @media (max-width: 1000px) {
   .resume-grid { grid-template-columns: 1fr; gap: 48px; margin-top: 48px; }
   .resume-col { gap: 40px; }
+  .resume-col + .resume-col { padding-left: 0; border-left: 0; }
 }
 @media (max-width: 760px) {
   .container { width: calc(100% - 40px); }
@@ -192,6 +199,7 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
   .site-header nav { gap: 4px 22px; }
   h1 { font-size: 34px; }
   .section-heading { flex-wrap: wrap; gap: 4px; padding-block: 22px 28px; }
+  .project-card { padding: 22px 20px; }
   .project-header { grid-template-columns: 28px 1fr; gap: 12px; margin-bottom: 22px; }
   .project h3 { font-size: 24px; }
   .project-overview { grid-template-columns: 1fr; gap: 28px; }
