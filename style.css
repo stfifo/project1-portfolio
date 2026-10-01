@@ -93,7 +93,8 @@ h2 { font-size: 22px; font-weight: 700; letter-spacing: -.03em; }
 .project { padding-bottom: 44px; border-bottom: 1px solid var(--line); }
 .project + .project { padding-top: 40px; }
 .project-header { margin-bottom: 26px; }
-.project h3 { margin-top: 5px; font-size: 28px; letter-spacing: -.03em; }
+.project h2 { margin-top: 5px; font-size: 32px; letter-spacing: -.03em; }
+.project h3 { margin-top: 5px; font-size: 22px; letter-spacing: -.03em; }
 .project-summary { margin-top: 9px; max-width: 740px; }
 .project-overview { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: start; }
 .project-image img { width: 100%; background: var(--image-background); }
@@ -186,7 +187,8 @@ h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
   .section-heading { flex-wrap: wrap; gap: 4px; padding-block: 22px 28px; }
   .project-card { padding: 22px 20px; }
   .project-header { margin-bottom: 22px; }
-  .project h3 { font-size: 24px; }
+  .project h2 { font-size: 26px; }
+  .project h3 { font-size: 20px; }
   .project-overview { grid-template-columns: 1fr; gap: 28px; }
   .case-text, .process-pair { grid-template-columns: 1fr; gap: 24px; }
   h2 { font-size: 21px; }
