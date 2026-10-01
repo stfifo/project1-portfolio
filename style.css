@@ -105,7 +105,7 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; }
 dt { color: var(--muted); }
 dd { margin: 0; }
 h4 { margin-top: 20px; font-size: 15px; }
-h4 + p { margin-top: 7px; color: var(--muted); font-size: 14px; }
+h4 + p { margin-top: 7px; font-size: 14px; }
 .contributions { padding-left: 19px; margin-top: 7px; font-size: 14px; }
 .contributions li + li { margin-top: 4px; }
 .tool-list { display: flex; flex-wrap: wrap; gap: 6px 0; list-style: none; padding: 0; margin-top: 20px; color: var(--muted); font-size: 12px; }
