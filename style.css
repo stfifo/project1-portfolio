@@ -50,7 +50,7 @@ h1, h2, h3, h4 { line-height: 1.5; }
 .resume-name { margin-top: 28px; font-size: clamp(30px, 6vw, 60px); font-weight: 700; letter-spacing: -.06em; line-height: 1.15; color: #303730;}
 .resume-grid { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 64px; margin-top: 60px; }
 .resume-col { display: grid; align-content: start; gap: 64px; min-width: 0; }
-.resume-heading { color: var(--ink); font-size: 18px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.resume-heading { color: var(--ink); font-size: 18px;font-weight: 700; letter-spacing: .02em; text-transform: uppercase;}
 .resume-block { display: grid; grid-template-columns: 88px 1fr; gap: 0 20px; align-items: start; }
 .resume-block > :not(.resume-heading) { grid-column: 2; grid-row: 1; }
 .resume-profile { font-size: 14px; }
@@ -58,6 +58,10 @@ h1, h2, h3, h4 { line-height: 1.5; }
 .resume-profile > div + div { margin-top: 14px; }
 .resume-profile dt { color: var(--ink); font-weight: 700; color: lightslategray;}
 .resume-profile ul { list-style: none; padding: 0; margin: 0; }
+.resume-profile > div:has(.link-buttons) { align-items: center; }
+.link-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.link-button { display: inline-flex; align-items: center; justify-content: center; width: 75px; min-height: 34px; border: 1px solid var(--ink); border-radius: 8px; font-size: 13px; text-decoration: none; }
+.link-button:hover { background: var(--ink); color: var(--page); }
 .resume-profile li::before { content: "- "; }
 .resume-rows { list-style: none; padding: 0; font-size: 14px; }
 .resume-rows li { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; }
@@ -108,9 +112,8 @@ h4 { margin-top: 20px; font-size: 15px; }
 h4 + p { margin-top: 7px; font-size: 14px; }
 .contributions { padding-left: 19px; margin-top: 7px; font-size: 14px; }
 .contributions li + li { margin-top: 4px; }
-.tool-list { display: flex; flex-wrap: wrap; gap: 6px 0; list-style: none; padding: 0; margin-top: 20px; color: var(--muted); font-size: 12px; }
-.tool-list li + li::before { content: "/"; padding-inline: 10px; color: var(--muted); }
-.project-links { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 6px; }
+.tool-list { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin-top: 20px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--accent); }
 .text-link:hover { text-decoration-thickness: 2px; }
 
@@ -123,7 +126,7 @@ h4 + p { margin-top: 7px; font-size: 14px; }
 .card-year { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
 .card-desc { color: var(--muted); font-size: 14px; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin-top: 14px; }
-.card-tags li { padding: 2px 12px; border-radius: 999px; background-color: #f0f0f0; color: #8f8f8f; font-size: 12px; line-height: 1.7; font-weight: 600;}
+.card-tags li, .tool-list li { padding: 2px 12px; border-radius: 999px; background-color: #f0f0f0; color: #8f8f8f; font-size: 12px; line-height: 1.7; font-weight: 600;}
 .project-page { padding-top: 20px; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-bottom: 12px; color: var(--muted); font-size: 13px; text-decoration: none; }
 .back-link:hover { color: var(--ink); text-decoration: underline; }

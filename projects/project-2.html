@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[프로젝트 이름] | [이름] 포트폴리오</title>
+  <title>project2 | MarketLit</title>
   <meta name="description" content="[이름]의 프로젝트 상세 페이지입니다.">
   <link rel="stylesheet" href="../style.css">
   <script src="../image-viewer.js" defer></script>
@@ -23,10 +23,10 @@
       <article id="project-2" class="project" aria-labelledby="project-2-title">
         <header class="project-header">
           <div>
-            <h2 id="project-2-title">[프로젝트 이름]</h2>
-            <p class="project-summary">[무엇을 만들었고, 어떤 것을 할 수 있는지 두 문장 이내로 설명합니다.]</p>
+            <h2 id="project-2-title">MarketLit</h2>
+            <p class="project-summary">분석 보고서를 읽으면서 경제에 대해 학습하고 싶은 주린이를 위한 서비스입니다. 주식 관련 정보 과부하와 흩어진 정보로 인해 판단하기 어려운 상황에서 주린이에게 분석 보고서와 개념설명을 제공합니다.</p>
             <div class="project-links">
-              <a class="text-link" href="https://github.com/본인계정/저장소">소스 코드 ↗</a>
+              <a class="link-button" href="https://github.com/kakaotechcampus-4/ktc4-pusan-5" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </div>
         </header>
@@ -35,27 +35,31 @@
           <figure class="project-image">
             <!-- 본인 이미지를 assets에 넣고 src, alt, width, height를 실제 이미지에 맞게 변경 -->
             <button class="image-trigger" type="button" data-image-viewer aria-label="프로젝트 이미지 크게 보기" aria-haspopup="dialog">
-              <img src="../assets/project-placeholder.svg"
-                   alt="본인 프로젝트의 화면이나 결과 이미지를 넣을 자리"
+              <img src="../assets/marketLit-stock.png"
+                   alt="개별종목 페이지에서는 해당 종목에 대한 상세 정보와 개별 종목 보고서를 확인할 수 있습니다"
                    width="960" height="720">
             </button>
-            <figcaption>[이 이미지에서 무엇을 확인할 수 있는지 설명]</figcaption>
+            <figcaption>종목의 차트와 함께 차트와 같이 보면 좋은 금융 지표를 확인할 수 있습니다. <br> 물음표 tooltip을 통해 해당 지표를 차트와 어떻게 연관지어 볼 수 있는지 알 수 있습니다.</figcaption>
           </figure>
           <div class="project-description">
             <dl class="project-facts">
-              <div><dt>진행 기간</dt><dd>[진행 기간]</dd></div>
-              <div><dt>참여 형태</dt><dd>[개인 / 팀 인원과 본인 역할]</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.08 - 2026.11</dd></div>
+              <div><dt>참여 형태</dt><dd>5인 개발 / PM, 풀스택 참여</dd></div>
               <ul class="tool-list" aria-label="이 작품에 사용한 도구">
-                <li>[사용 도구 1]</li><li>[사용 도구 2]</li>
+                <li>React + Vite</li>
+                <li>PostgreSQL</li>
+                <li>FastAPI</li>
+                <li>SQLAlchemy</li>
+                <li>Docker</li>
+                <li>LangGraph</li>
+                <li>RestAPI</li>
               </ul>
             </dl>
             <h4>내가 맡은 일</h4>
             <ul class="contributions">
-              <li>[직접 구현하거나 구성한 작업]</li>
-              <li>[직접 해결하거나 개선한 부분]</li>
+              <li>OAuth 2.0 기반 카카오 소셜 로그인 및 JWT 토큰 기반 인증/인가 시스템 풀스택 구현</li>
+              <li>외부 금융/주식 API 연동 및 데이터 시각화/대시보드 구현</li>
             </ul>
-            <h4>확인할 수 있는 결과</h4>
-            <p>[완성한 기능이나 표현을 설명합니다. 수치가 있다면 직접 확인한 값만 적습니다.]</p>
 
           </div>
         </div>
@@ -67,28 +71,16 @@
             <div class="case-text">
               <section aria-labelledby="project-2-goal">
                 <h4 id="project-2-goal">무엇을 만들려고 했나</h4>
-                <p>[작업 목표와 조건, 처음에 정한 범위를 적습니다.]</p>
+                <p>데이터 충분성 에이전트 바탕으로 시장 상황에 대한 보고서를 만들고, 보고서의 어려운 개념을 클릭하면 해당 개념 페이지를 확인할 수 있는 주식 서비스를 만들고자 하였습니다. 보고서와 함께 주식 지표를 확인하며 관련 정보와 지표를 학습하는 것을 목표로 하였습니다.</p>
               </section>
               <section aria-labelledby="project-2-problem">
                 <h4 id="project-2-problem">어디에서 막혔고, 어떻게 풀었나</h4>
-                <p>[겪은 문제 → 시도한 방법 → 선택한 해결 방법 순으로 적습니다. 왜 그 방법을 골랐는지도 설명합니다.]</p>
+                <p>홈과 종목 상세가 하나의 클라이언트와 호출 제한을 공유하기 때문에 홈 수집을 먼저하고 남는 시간에 종목 상세를 처리하는 방향으로 구현했습니다. 팀원간 리뷰를 통해 지금은 괜찮지만 나중에는 여러 종목 조회가 동시에 몰릴 수 있음 + 홈 수집 주기가 촘촘해져서 종목 상세의 순위가 뒤로 밀림 등의 문제가 발생할 수 있음을 확인했습니다. OS scheduling 개념을 참고하는 방향으로 starvation 문제를 해결하되, 지금 단계에서는 특정 scheduling algorithm을 먼저 고르기보다는 상세 요청 p95 대기시간, 홈 데이터 freshness, API rate limit 발생 횟수 등의 관련 지표를 관측할 수 있는 log 를 만들어두고 이후 정책 변경의 근거로 활용하고자 하였습니다</p>
               </section>
               <section aria-labelledby="project-2-result">
                 <h4 id="project-2-result">어떻게 확인했고, 무엇이 남았나</h4>
-                <p>[수정 후 확인 방법과 결과를 적습니다. 아직 해결하지 못한 점이나 다음에 개선할 점도 적을 수 있습니다.]</p>
+                <p>보고서 생성시 데이터 충분성을 판단하는 에이전틱 요소를 넣어서 보고서의 품질을 보완하고자 했습니다. 처음에는 근거의 출처 명확성을 바탕으로 충분성을 평가하려고 했으나 주식이라는 도메인 특성상 근거가 더 좋은 내용임을 보장하는지에 대한 의구심이 들었습니다. 데이터 충분성은 어떻게 평가할 것인가?에 대해 어려움이 생겨서 생성된 보고서에 대해 사람이 "충분 / 정보 부족 / 근거는 있으나 인과가 약함 / 근거 충돌 / 명확한 원인을 찾기 어려움" 정도로 분류한 후 데이터 충분성 판단 지표를 다시 정하고자 합니다</p>
               </section>
-            </div>
-            <!-- 선택: 비교가 도움이 되는 작품에 사용. 불필요하면 process-pair 전체 삭제.
-                 image-slot을 <img src="../assets/before.png" alt="실제 수정 전 상태 설명"> 등으로 교체 -->
-            <div class="process-pair">
-              <figure>
-                <div class="image-slot">수정 전 화면</div>
-                <figcaption>[어떤 문제가 보였는지]</figcaption>
-              </figure>
-              <figure>
-                <div class="image-slot">수정 후 화면</div>
-                <figcaption>[어디를 어떻게 바꿨는지]</figcaption>
-              </figure>
             </div>
           </div>
         </section>
