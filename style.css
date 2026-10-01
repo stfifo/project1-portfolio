@@ -97,7 +97,7 @@ h2 { font-size: 22px; font-weight: 700; letter-spacing: -.03em; }
 .project h3 { margin-top: 5px; font-size: 22px; letter-spacing: -.03em; }
 .project-summary { margin-top: 9px; max-width: 740px; }
 .project-overview { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: start; }
-.project-image img { width: 100%; background: var(--image-background); }
+.project-image img, .project-image video { display: block; width: 100%; height: auto; background: var(--image-background); }
 figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; }
 .project-facts { padding-bottom: 16px; font-size: 13px; }
 .project-facts div { display: grid; grid-template-columns: 80px 1fr; gap: 12px; }
