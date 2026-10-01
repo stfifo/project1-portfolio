@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- 수정 1: 제목, 소개, 이름을 본인 내용으로 변경 -->
-  <title>[이름] | [관심 분야] 포트폴리오</title>
+  <title>포트폴리오</title>
   <meta name="description" content="[이름]이 직접 만든 작품과 작업 과정을 소개합니다.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로 가기</a>
   <header class="site-header container">
-    <a class="site-name" href="#resume">[이름]<span class="site-label">포트폴리오</span></a>
     <nav aria-label="주 메뉴">
       <a href="#resume">이력서</a>
       <a href="#projects">프로젝트</a>
@@ -22,16 +21,15 @@
     <!-- 이력서: 대괄호 내용을 본인 정보로 변경. 필요 없는 항목은 div 단위로 삭제 -->
     <section id="resume" class="resume" aria-labelledby="resume-title">
       <p class="resume-label">Resume</p>
-      <h1 id="resume-title" class="resume-name">[이름]</h1>
+      <h1 id="resume-title" class="resume-name">최지은</h1>
       <p style="margin-top: 20px">어쩌구 저쩌구에 관심이 있는 컴퓨터 공학 전공 대학생입니다</p>
       <div class="resume-grid">
         <div class="resume-col">
           <dl class="resume-profile">
-            <div><dt>Birth</dt><dd>[생년월일]</dd></div>
-            <div><dt>Experience</dt><dd>[경력 연차]</dd></div>
-            <div><dt>Education</dt><dd><ul><li>[학교 · 전공 · 졸업 여부]</li><li>[학교 · 전공 · 졸업 여부]</li></ul></dd></div>
-            <div><dt>Active</dt><dd><ul><li>[동아리 · 학회 · 대외 활동]</li><li>[동아리 · 학회 · 대외 활동]</li></ul></dd></div>
-            <div><dt>Contact</dt><dd><a href="mailto:name@email.com">[name@email.com]</a><br>[010-0000-0000]</dd></div>
+            <div><dt>Birth</dt><dd>2002-12-27</dd></div>
+            <div><dt>Education</dt><dd><ul><li>마산제일여자고등학교 / 21.02 졸업</li><li>부산대학교 정보컴퓨터공학부 인공지능 전공 / 3학년 재학</li></ul></dd></div>
+            <div><dt>Active</dt><dd><ul><li>Apptive 24기 안드로이드</li><li>카카오테크캠퍼스 4기</li></ul></dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:name@email.com">qki546@pusan.ac.kr</a></dd></div>
           </dl>
         </div>
 
@@ -39,15 +37,15 @@
           <section class="resume-block" aria-labelledby="career-title">
             <h2 id="career-title" class="resume-heading">Career</h2>
             <ul class="resume-rows">
-              <li><span class="row-period">[2023.08 ~ 재직 중]</span><span>[회사 · 팀 이름]</span></li>
-              <li><span class="row-period">[2020.01 ~ 2023.07]</span><span>[회사 · 팀 이름]</span></li>
+              <li><span class="row-period">[2026.07 ~ 2026.08]</span><span>경동건설 단기 인턴</span></li>
             </ul>
           </section>
           <section class="resume-block" aria-labelledby="awards-title">
             <h2 id="awards-title" class="resume-heading">Awards</h2>
             <ul class="resume-rows">
-              <li><span class="row-period">[연도]</span><span>[수상 내역]</span></li>
-              <li><span class="row-period">[연도]</span><span>[수상 내역]</span></li>
+              <li><span class="row-period">2026.05</span><span>2026 부산대학교 프로그래밍 대회 Div1 동상</span></li>
+              <li><span class="row-period">2026.01</span><span>PNU 지역 문제 해결 에듀테크 해커톤 장려상</span></li>
+              <li><span class="row-period">2025.12</span><span>제10회 PNU SW+X 문제해결 경진대회 우수상</span></li>
             </ul>
           </section>
           <section class="resume-block" aria-labelledby="tools-title">
@@ -69,7 +67,7 @@
       <!-- 카드 하나가 프로젝트 상세 페이지(project-N.html) 하나로 연결됩니다. -->
       <ul class="project-list">
         <li>
-          <a class="project-card" href="project-1.html">
+          <a class="project-card" href="projects/project-1.html">
             <div class="card-head"><h3>[대표 프로젝트 이름]</h3><span class="card-year">[연도]</span></div>
             <span class="card-desc">[프로젝트를 한두 줄로 설명]</span>
             <ul class="card-tags" aria-label="사용한 도구">
@@ -78,7 +76,7 @@
           </a>
         </li>
         <li>
-          <a class="project-card" href="project-2.html">
+          <a class="project-card" href="projects/project-2.html">
             <div class="card-head"><h3>[프로젝트 이름]</h3><span class="card-year">[연도]</span></div>
             <span class="card-desc">[프로젝트를 한두 줄로 설명]</span>
             <ul class="card-tags" aria-label="사용한 도구">
@@ -87,7 +85,7 @@
           </a>
         </li>
         <li>
-          <a class="project-card" href="project-3.html">
+          <a class="project-card" href="projects/project-3.html">
             <div class="card-head"><h3>[프로젝트 이름]</h3><span class="card-year">[연도]</span></div>
             <span class="card-desc">[프로젝트를 한두 줄로 설명]</span>
             <ul class="card-tags" aria-label="사용한 도구">
